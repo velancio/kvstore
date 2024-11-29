@@ -47,7 +47,7 @@ From the root of the project
 First generate the proto files necessary for grpc communication
 
 ```bash
-$ make proto
+$ make protobuf
 ```
 
 Run the docker compose file to spin up the service and the key value store.
@@ -63,13 +63,13 @@ $ docker-compose down
 ```
 ## Usage/Examples
 
-
+Replace {API_PORT} with the port number of the API service
 
 ##### Create the key value pair that has the key "test" and value "test"
 
 
 ```bash
-curl --location 'localhost:8081/store' \
+curl --location 'localhost:{API_PORT}/store' \
 --header 'Content-Type: application/json' \
 --data '{
     "key": "test",
@@ -83,14 +83,14 @@ curl --location 'localhost:8081/store' \
 
 
 ```bash
-curl --location 'localhost:8081/store?key=test'
+curl --location 'localhost:{API_PORT}/store?key=test'
 ```
 
 ##### Delete the key value pair that has the key "test"
 
 
 ```bash
-curl --location --request DELETE 'localhost:8081/store/test'
+curl --location --request DELETE 'localhost:{API_PORT}/store/test'
 ```
 
 
@@ -99,7 +99,7 @@ curl --location --request DELETE 'localhost:8081/store/test'
 From the root of the project run
 
 ```bash
-  go test ./...
+go test -v ./...
 ```
 
 

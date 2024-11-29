@@ -1,2 +1,2 @@
 .idea/
-.proto/gen/proto/
+**/*.pb.go
