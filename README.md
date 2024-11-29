@@ -107,7 +107,7 @@ From the root of the project run
 
 ### Store key-value pair
 
-```http
+```bash
   POST /store
 ```
 Body:
@@ -126,7 +126,7 @@ Response:
 
 ### Get value of the key-value pair
 
-```http
+```bash
   GET /store?key={key}
 ```
 
@@ -144,7 +144,7 @@ Response:
 
 ### Delete key-value pair
 
-```http
+```bash
   DELETE /store/{key}
 ```
 
